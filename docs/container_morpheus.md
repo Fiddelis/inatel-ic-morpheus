@@ -1,0 +1,48 @@
+# Utilizando o Morpheus atrávez do Docker
+
+A NVIDIA disponibiliza ^^Imagens pré-configuradas^^ de containers que nos permite utilizar o Morpheus sem a necessidade de ter instalado na sua própria maquina, permitindo a ==execução de testes de forma rápida e funcional==.
+
+No momento que estou escrevendo esse documento, o Morpheus se encontra na versão ^^24.06(LTE)^^.
+
+---
+
+## Pré-requisitos:
+
+- Docker
+
+---
+
+## Download da Imagem
+
+Com o Docker ja instalado na sua maquina, precisamos baixar a imagem na nuvem da NVIDIA ([NGC](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/morpheus/containers/morpheus)).
+
+```sh
+docker pull nvcr.io/nvidia/morpheus/morpheus:24.06-runtime
+```
+
+Para verificar se o comando funcionou corretamente, execute o comando abaixo para listar todas as imagens instaladas no Docker:
+
+```sh
+docker ps
+```
+
+??? failure
+    Caso a imagem não se encontre na lista, verifique se inseriu a tag corretamente e tente novamente.
+
+---
+
+## Executando o Morpheus
+
+Para Utilizar o Morpheus basta executar o seguinte comando no terminal:
+
+```sh
+docker run --rm -ti --runtime=nvidia --gpus=all --network=host nvcr.io/nvidia/morpheus/morpheus:24.06-runtime bash
+```
+
+Isso vai fazer com que um container seja criado e executado no seu terminal, ao finalizar a sessão será apagado o container junto com os arquivos que foram gerados.
+
+Dentro do Bash do container é possivel executar qualquer tipo de comando relacionado ao Morpheus, tal qual:
+
+```sh
+morpheus run --help
+```
