@@ -83,16 +83,12 @@ morpheus --log_level=DEBUG \
 
 Para o entendimento, iremos analisar linha a linha do comando.
 
----
-
-
 ```sh
 # Define o nivel do log para o modo de Debug
 
 morpheus --log_level=DEBUG \
 ```
 
----
 ```sh
 # Executa um pipeline com 8 threads e um tamanho de lote de modelo de 1024
 # (deve ser igual ou menor que a configuração do Triton)
@@ -100,7 +96,6 @@ morpheus --log_level=DEBUG \
 run --num_threads=8 --pipeline_batch_size=1024 --model_max_batch_size=1024 \
 ```
 
----
 ```sh
 # Especifica um pipeline FIL com 256 de comprimento de sequência
 # (deve corresponder à configuração do Triton)
@@ -108,28 +103,24 @@ run --num_threads=8 --pipeline_batch_size=1024 --model_max_batch_size=1024 \
 pipeline-fil --columns_file=data/columns_fil.txt \
 ```
 
----
 ```sh
 # Faz a leitura de um arquivo na pasta especificada
 
 from-file --filename=examples/data/nvsmi.jsonlines \
 ```
 
----
 ```sh
 # Disserializa o arquivo para poder ser processado
 
 deserialize \
 ```
 
----
 ```sh
 # Pré-processamento que converte as entradas para um token BERT
 
 preprocess \
 ```
 
----
 ```sh
 # Envia mensagem para o Triton fazer a inferencia
 # (é necessário especificar o modelo)
@@ -137,21 +128,18 @@ preprocess \
 inf-triton --model_name=abp-nvsmi-xgb --server_url=localhost:8000 \
 ```
 
----
 ```sh
 # Monitora o estágio anterior e exibe no console as informações de performance
 
 monitor --description "Inference Rate" --smoothing=0.001 --unit inf \
 ```
 
----
 ```sh
 # Adiciona o resultado de inferência na mensagem
 
 add-class \
 ```
 
----
 ```sh
 # Converte a mensagem de Objeto para String novamente,
 # contendo somente as informações resultantes da inferência
@@ -159,16 +147,15 @@ add-class \
 serialize --include 'mining' \
 ```
 
----
 ```sh
 # Faz a escrita do resultado em um arquivo .jsonline
 
 to-file --filename=detections.jsonlines --overwrite
 ```
 
----
-
 A ordem de execução do Pipeline foi linear, onde a saída do nó anterior vai para a entrada do próximo nó.
+
+---
 
 ## Resultado
 
