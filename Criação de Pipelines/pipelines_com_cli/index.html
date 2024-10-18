@@ -645,67 +645,56 @@
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span>to-file<span class="w"> </span>--filename<span class="o">=</span>detections.jsonlines<span class="w"> </span>--overwrite
 </span></code></pre></div>
 <p>Para o entendimento, iremos analisar linha a linha do comando.</p>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Define o nivel do log para o modo de Debug</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>morpheus<span class="w"> </span>--log_level<span class="o">=</span>DEBUG<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Executa um pipeline com 8 threads e um tamanho de lote de modelo de 1024</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># (deve ser igual ou menor que a configuração do Triton)</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>run<span class="w"> </span>--num_threads<span class="o">=</span><span class="m">8</span><span class="w"> </span>--pipeline_batch_size<span class="o">=</span><span class="m">1024</span><span class="w"> </span>--model_max_batch_size<span class="o">=</span><span class="m">1024</span><span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Especifica um pipeline FIL com 256 de comprimento de sequência</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># (deve corresponder à configuração do Triton)</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>pipeline-fil<span class="w"> </span>--columns_file<span class="o">=</span>data/columns_fil.txt<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Faz a leitura de um arquivo na pasta especificada</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>from-file<span class="w"> </span>--filename<span class="o">=</span>examples/data/nvsmi.jsonlines<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Disserializa o arquivo para poder ser processado</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>deserialize<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Pré-processamento que converte as entradas para um token BERT</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>preprocess<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Envia mensagem para o Triton fazer a inferencia</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># (é necessário especificar o modelo)</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>inf-triton<span class="w"> </span>--model_name<span class="o">=</span>abp-nvsmi-xgb<span class="w"> </span>--server_url<span class="o">=</span>localhost:8000<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Monitora o estágio anterior e exibe no console as informações de performance</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>monitor<span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;Inference Rate&quot;</span><span class="w"> </span>--smoothing<span class="o">=</span><span class="m">0</span>.001<span class="w"> </span>--unit<span class="w"> </span>inf<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Adiciona o resultado de inferência na mensagem</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>add-class<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Converte a mensagem de Objeto para String novamente,</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1"># contendo somente as informações resultantes da inferência</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>serialize<span class="w"> </span>--include<span class="w"> </span><span class="s1">&#39;mining&#39;</span><span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
-<hr />
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Faz a escrita do resultado em um arquivo .jsonline</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>to-file<span class="w"> </span>--filename<span class="o">=</span>detections.jsonlines<span class="w"> </span>--overwrite
 </span></code></pre></div>
-<hr />
 <p>A ordem de execução do Pipeline foi linear, onde a saída do nó anterior vai para a entrada do próximo nó.</p>
+<hr />
 <h2 id="resultado">Resultado</h2>
 <p>Ao concluir a execução do Pipeline, teremos os seguintes resultados.</p>
 <h3 id="console">Console</h3>
