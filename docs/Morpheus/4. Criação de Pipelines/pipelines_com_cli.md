@@ -195,7 +195,7 @@ Inference Rate[Complete]: 1242inf [00:00, 1863.04inf/s]
 !!! note
     Como utilizamos a configuração de Debug no Log, tivemos informações de tudo que estáva acontecendo na criação dos estágios.
 
-### Arquivo resultante
+### Arquivo
 
 ```json
 ...

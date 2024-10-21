@@ -1,6 +1,6 @@
 # Documentação
 
-:classical_building: Site criado para documentar os estudos referente a Iniciação Cientifica no CS&I Lab.
+:classical_building: Site criado para documentar os estudos referente a Iniciação Cientifica no CS&I Lab sobre IA e Cybersegurança.
 
 !!! note "Contatos"
     :octicons-mail-16: *Email: [lucas.ruan@ges.inatel.br](mailto:lucas.ruan@ges.inatel.br)*
