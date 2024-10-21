@@ -1,4 +1,4 @@
-# Utilizando o Triton Server atráves do Docker
+# Triton Server atráves do Docker
 
 Muitos casos de testes **onde é necessário a analise dos dados a partir de uma IA** é preciso que tenha em execução o Triton Inference Server, ==é ele quem cuida da classificação dos dados== a partir do seu modelo pré-treinado.
 

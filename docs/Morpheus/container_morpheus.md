@@ -1,4 +1,4 @@
-# Utilizando o Morpheus atrávez do Docker
+# Morpheus atrávez do Docker
 
 A NVIDIA disponibiliza ^^Imagens pré-configuradas^^ de containers que nos permite utilizar o Morpheus sem a necessidade de ter instalado na sua própria maquina, permitindo a ==execução de testes de forma rápida e funcional==.
 
@@ -8,7 +8,10 @@ No momento que estou escrevendo esse documento, o Morpheus se encontra na versã
 
 ## Pré-requisitos:
 
-- Docker
+- Arquitetura Volta de GPU ou melhor.
+- [CUDA 12.1](https://developer.nvidia.com/cuda-12-1-0-download-archive)
+- [Docker](https://docs.docker.com/get-docker/)
+- [The NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
 
 ---
 
