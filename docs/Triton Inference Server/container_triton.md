@@ -8,8 +8,8 @@ No momento que estou escrevendo esse documento, o Triton Inference Server se enc
 
 ## Pré-requisitos
 
-- Docker
-
+- [Docker](https://docs.docker.com/get-docker/)
+- [The NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
 ---
 
 ## Download da Imagem
