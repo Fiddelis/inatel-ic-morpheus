@@ -1,4 +1,4 @@
-# Triton Server atráves do Docker
+# Triton Server através do Docker
 
 Muitos casos de testes **onde é necessário a analise dos dados a partir de uma IA** é preciso que tenha em execução o Triton Inference Server, ==é ele quem cuida da classificação dos dados== a partir do seu modelo pré-treinado.
 
@@ -67,5 +67,6 @@ Depois que o Triton carregar o modelo, será exibido algo parecido com:
 | {NOME-DO-MODELO}  | 1       | READY  |
 +-------------------+---------+--------+
 ```
+
 ??? failure
     Se isso não estiver presente na saída, verifique o log do Triton para quaisquer mensagens de erro relacionadas ao carregamento do modelo.
