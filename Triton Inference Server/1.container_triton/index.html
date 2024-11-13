@@ -18,7 +18,7 @@
     
     
       
-        <title>1. Triton através do Docker - IC - IA e Cybersecurity</title>
+        <title>1. Configuração do Triton com Docker - IC - IA e Cybersecurity</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-triton-atraves-do-docker" class="md-skip">
+        <a href="#1-configuracao-do-triton-com-docker" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Triton através do Docker
+              1. Configuração do Triton com Docker
             
           </span>
         </div>
@@ -316,11 +316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Fontes/arquiteturas/" class="md-nav__link">
+      <a href="../../Fontes/fontes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Arquiteturas
+    Fontes
   </span>
   
 
@@ -383,7 +383,7 @@
         
   
   <span class="md-ellipsis">
-    0. Introdução Morpheus
+    0. Introdução ao Morpheus
   </span>
   
 
@@ -404,7 +404,7 @@
         
   
   <span class="md-ellipsis">
-    1. Morpheus através do Docker
+    1. Configuração do Morpheus com Docker
   </span>
   
 
@@ -425,7 +425,7 @@
         
   
   <span class="md-ellipsis">
-    2. Arquitetura do Morpheus
+    2. Arquitetura e Componentes do Morpheus
   </span>
   
 
@@ -446,7 +446,7 @@
         
   
   <span class="md-ellipsis">
-    3. Criação de Estágios
+    3. Criação e Configuração de Estágios no Morpheus
   </span>
   
 
@@ -467,7 +467,7 @@
         
   
   <span class="md-ellipsis">
-    4. Tipos de Estágios
+    4. Tipos de Estágios no Morpheus
   </span>
   
 
@@ -498,7 +498,7 @@
             
   
   <span class="md-ellipsis">
-    5. Criação de Pipelines
+    5. Gerenciamento de Pipelines no Morpheus
   </span>
   
 
@@ -508,7 +508,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
-            5. Criação de Pipelines
+            5. Gerenciamento de Pipelines no Morpheus
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -519,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Morpheus/5.%20Cria%C3%A7%C3%A3o%20de%20Pipelines/5.1.pipelines_com_cli/" class="md-nav__link">
+      <a href="../../Morpheus/5.%20Gerenciamento%20de%20Pipelines%20no%20Morpheus/5.1.pipelines_com_cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -540,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Morpheus/5.%20Cria%C3%A7%C3%A3o%20de%20Pipelines/5.2.pipelines_com_python/" class="md-nav__link">
+      <a href="../../Morpheus/5.%20Gerenciamento%20de%20Pipelines%20no%20Morpheus/5.2.pipelines_com_python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -615,7 +615,7 @@
         
   
   <span class="md-ellipsis">
-    0. Introdução SIEM
+    0. Introdução ao SIEM
   </span>
   
 
@@ -680,7 +680,7 @@
         
   
   <span class="md-ellipsis">
-    0. Introdução Triton
+    0. Introdução ao Triton
   </span>
   
 
@@ -710,7 +710,7 @@
           
   
   <span class="md-ellipsis">
-    1. Triton através do Docker
+    1. Configuração do Triton com Docker
   </span>
   
 
@@ -721,7 +721,7 @@
         
   
   <span class="md-ellipsis">
-    1. Triton através do Docker
+    1. Configuração do Triton com Docker
   </span>
   
 
@@ -856,7 +856,7 @@
   
 
 
-<h1 id="1-triton-atraves-do-docker">1. Triton através do Docker</h1>
+<h1 id="1-configuracao-do-triton-com-docker">1. Configuração do Triton com Docker</h1>
 <p>Muitos casos de testes <strong>onde é necessário a analise dos dados a partir de uma IA</strong> é preciso que tenha em execução o Triton Inference Server, <mark>é ele quem cuida da classificação dos dados</mark> a partir do seu modelo pré-treinado.</p>
 <p>No momento que estou escrevendo esse documento, o Triton Inference Server se encontra na versão <ins>24.09</ins>.</p>
 <hr />
@@ -956,8 +956,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant.progress"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
