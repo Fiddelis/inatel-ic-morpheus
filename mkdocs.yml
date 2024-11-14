@@ -1,18 +1,21 @@
-site_name: IC - IA e Cybersecurity
+site_name: Estudos
 repo_url: https://github.com/Fiddelis/inatel-ic-morpheus
 repo_name: fiddelis/inatel-ic-morpheus
+
 extra:
   homepage: http://fiddelis.me/inatel-ic-morpheus/
   analytics:
     provider: google
     property: G-JCXV5HL48C
-    
+
 theme:
   language: pt-BR
   favicon: assets/favicon.png
   logo: assets/favicon.png
   name: material
   features:
+    - header.autohide
+    - navigation.footer
     - content.code.copy
     - navigation.instant.progress
   font:
@@ -21,17 +24,17 @@ theme:
   palette:
     # Palette toggle for dark mode
     - scheme: slate
-      primary: teal
+      primary: black
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
     # Palette toggle for light mode
     - scheme: default
-      primary: teal
+      primary: black
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    
+
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -63,6 +66,13 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Fiddelis
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/lucas-ruan-fidelis/
 
 extra_css:
   - css/extra.css
